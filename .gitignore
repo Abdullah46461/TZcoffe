@@ -1,4 +1,6 @@
-# Created by .ignore support plugin (hsz.mobi)
+git remote add origin https://github.com/Abdullah46461/TZcoffe.git
+git branch -M main
+git push -u origin main# Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
 logs

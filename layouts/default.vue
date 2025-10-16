@@ -5,13 +5,12 @@
       app
       :permanent="!isMobile"
       :mini-variant="miniVariant && !isMobile"
-      :dark="true"
-      color="#000000"
+      :dark="$vuetify.theme.dark"
+      :color="$vuetify.theme.dark ? '#1E1E1E' : '#FFFFFF'"
       class="sidebar"
       width="260"
       mini-variant-width="64"
     >
-      <!-- Шапка с профилем -->
       <div class="sidebar-header">
         <v-list-item 
           class="px-2" 
@@ -19,7 +18,7 @@
           :class="{ 'cursor-pointer': miniVariant }"
         >
           <v-list-item-avatar>
-            <v-icon large color="white">mdi-account-circle</v-icon>
+            <v-icon large :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-account-circle</v-icon>
           </v-list-item-avatar>
           <v-list-item-content v-if="!miniVariant">
             <v-list-item-title class="sidebar-user-name">
@@ -31,7 +30,7 @@
             icon
             small
             @click.stop="toggleMiniVariant"
-            color="white"
+            :color="$vuetify.theme.dark ? 'white' : 'black'"
           >
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
@@ -40,14 +39,13 @@
 
       <v-divider dark></v-divider>
 
-      <!-- Меню -->
       <v-list nav dense class="pt-0 sidebar-menu">
         <v-list-item
           link
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-store</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-store</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Торговые точки</v-list-item-title>
@@ -59,7 +57,7 @@
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-coffee-maker</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-coffee-maker</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Кофемашины</v-list-item-title>
@@ -71,7 +69,7 @@
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-handshake</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-handshake</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Партнеры</v-list-item-title>
@@ -83,7 +81,7 @@
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-account-group</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-account-group</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Сотрудники</v-list-item-title>
@@ -95,7 +93,7 @@
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-coffee</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-coffee</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Напитки</v-list-item-title>
@@ -107,7 +105,7 @@
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-card-account-details</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-card-account-details</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Абонементы</v-list-item-title>
@@ -119,7 +117,7 @@
           class="sidebar-item"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-account-check</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-account-check</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Активные абонементы</v-list-item-title>
@@ -132,7 +130,7 @@
           class="sidebar-item sidebar-item--active"
         >
           <v-list-item-icon>
-            <v-icon color="white">mdi-account-multiple</v-icon>
+            <v-icon :color="$vuetify.theme.dark ? 'white' : 'black'">mdi-account-multiple</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>Пользователи</v-list-item-title>
@@ -140,14 +138,13 @@
         </v-list-item>
       </v-list>
 
-      <!-- Переключатель темы внизу -->
       <template #append>
         <div class="pa-2">
           <v-btn
             icon
             @click="toggleTheme"
             :title="$vuetify.theme.dark ? 'Светлая тема' : 'Тёмная тема'"
-            color="white"
+            :color="$vuetify.theme.dark ? 'white' : 'black'"
           >
             <v-icon>{{ themeIcon }}</v-icon>
           </v-btn>
@@ -219,7 +216,6 @@ export default {
     }
   }
   
-  // Для mini-variant - центрируем иконку
   .v-navigation-drawer--mini-variant & {
     .v-list-item {
       justify-content: center;
@@ -229,7 +225,6 @@ export default {
 }
 
 .sidebar-user-name {
-  color: white;
   font-size: 16px;
   font-weight: 600;
   white-space: normal;
@@ -249,7 +244,7 @@ export default {
   transition: background-color 0.2s ease;
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(128, 128, 128, 0.2) !important;
   }
   
   &--active {
@@ -261,7 +256,6 @@ export default {
   }
   
   ::v-deep .v-list-item__title {
-    color: white;
     font-size: 14px;
     font-weight: 400;
   }
