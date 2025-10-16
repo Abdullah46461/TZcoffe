@@ -1,0 +1,110 @@
+@import './variables.scss';
+
+// Общие стили
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  font-weight: $font-weight-body;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $color-primary;
+}
+
+// Типографика
+h1, .h1 {
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  font-weight: $font-weight-h1;
+  color: $color-text;
+}
+
+.body-text {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  font-weight: $font-weight-body;
+  color: $color-text;
+}
+
+.caption-text {
+  font-size: $font-size-caption;
+  line-height: $line-height-caption;
+  font-weight: $font-weight-caption;
+  color: $color-caption;
+}
+
+// Vuetify overrides
+.v-application {
+  font-family: $font-family !important;
+  
+  .text-h1 {
+    font-family: $font-family !important;
+    font-size: $font-size-h1 !important;
+    line-height: $line-height-h1 !important;
+    font-weight: $font-weight-h1 !important;
+  }
+  
+  .text-body-1 {
+    font-family: $font-family !important;
+    font-size: $font-size-body !important;
+    line-height: $line-height-body !important;
+    font-weight: $font-weight-body !important;
+  }
+  
+  .text-caption {
+    font-family: $font-family !important;
+    font-size: $font-size-caption !important;
+    line-height: $line-height-caption !important;
+    font-weight: $font-weight-caption !important;
+  }
+}
+
+// Dark theme
+.theme--dark {
+  &.v-application {
+    background-color: $color-dark-bg !important;
+    color: $color-dark-text !important;
+  }
+  
+  .caption-text {
+    color: $color-dark-caption;
+  }
+}
+
+// Утилиты для адаптивности
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile + 1}) and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet + 1}) {
+    @content;
+  }
+}
+
+// Экспорт миксинов для использования в компонентах
+:export {
+  colorPrimary: $color-primary;
+  colorSecondary: $color-secondary;
+  colorAccent: $color-accent;
+  colorText: $color-text;
+  colorCaption: $color-caption;
+}

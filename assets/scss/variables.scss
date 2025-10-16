@@ -1,0 +1,45 @@
+// Основные переменные цветов
+$color-primary: #FFFFFF;
+$color-secondary: #EEEEEE;
+$color-accent: #FFD166;
+$color-text: #000000;
+$color-caption: #787878;
+
+// Dark theme colors
+$color-dark-bg: #1E1E1E;
+$color-dark-surface: #2C2C2C;
+$color-dark-text: #FFFFFF;
+$color-dark-caption: #B0B0B0;
+
+// Типографика
+$font-family: 'Nunito', sans-serif;
+
+// H1
+$font-size-h1: 24px;
+$line-height-h1: 28px;
+$font-weight-h1: 700;
+
+// Body
+$font-size-body: 14px;
+$line-height-body: 16px;
+$font-weight-body: 400;
+
+// Caption
+$font-size-caption: 10px;
+$line-height-caption: 12px;
+$font-weight-caption: 400;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1440px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Transitions
+$transition-base: 0.3s ease;

@@ -1,0 +1,59 @@
+/* Глобальные стили */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Vuetify overrides */
+.v-application {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.v-application .text-h1 {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  font-weight: 700 !important;
+}
+
+.v-application .text-body-1 {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+}
+
+.v-application .caption-text {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 10px !important;
+  line-height: 12px !important;
+  font-weight: 400 !important;
+}
+
+/* Утилитарные классы */
+.caption-text {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #787878;
+}
+
+.theme--dark .caption-text {
+  color: #B0B0B0;
+}
